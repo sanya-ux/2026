@@ -646,7 +646,7 @@ const artworks = {
   sketch3: {
     id: 'sketch-3',
     category: 'sketches',
-    image: 'art/sketches/vert2.png'
+    image: 'art/sketches/self.png'
   },
   sketch4: {
     id: 'sketch-3',
@@ -662,7 +662,7 @@ const artworks = {
   sketch6: {
     id: 'sketch-3',
     category: 'sketches',
-    image: 'art/sketches/vert7.jpg'
+    image: 'art/sketches/study.jpg'
   },
 
   // Game Art
@@ -740,7 +740,7 @@ const artworks = {
   illustration4: {
     id: 'illustration-3',
     category: 'illustration',
-    image: 'art/illustration/hz4.jpg',
+    image: 'art/illustration/canopy.jpg',
   },
   illustration5: {
     id: 'illustration-3',

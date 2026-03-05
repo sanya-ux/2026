@@ -628,38 +628,7 @@ doromind: {
       {type: 'spacing', space: 64 }
     ]
   },
-  arvid: {
-    id: 'arvid',
-    title: 'ARvid — UX Case Study',
-    hoverTitle: 'UX Case Study',
-    timeline: '2024',
-    keywords: 'AR, Usability Testing, User Research',
-    softwares: 'Figma, After Effects',
-    //tagline: 'Pre-visualising AR experiences in motion.',
-    image: 'images/ARvid.jpg'
-  },
-  gassyGus: {
-    id: 'gassy-gus',
-    title: 'Gassy Gus — MR Game',
-    hoverTitle: 'Mixed Reality Game Design | Prototyping',
-    timeline: '2022',
-    keywords: 'Game Design, UI, Storyboarding',
-    softwares: 'Figma, Procreate',
-    //tagline: 'A playful interface for a chaotic party game.',
-    image: 'images/gassy-gus.png'
-  },
-  
-  motionFolio: {
-    id: 'motion-folio',
-    title: 'Motion & UI Folio',
-    hoverTitle: 'Compilation',
-    timeline: 'Ongoing',
-    keywords: 'Motion Design, UI, Prototyping',
-    softwares: 'After Effects, Figma',
-    //tagline: 'Selected experiments in motion and interactive UI.',
-    image: 'images/ui-folio.jpg',
-    layout: 'wide'
-  }
+
 };
 
 const artworks = {

@@ -1067,9 +1067,33 @@ footer {
 @media (max-width: 900px) {
   :root { --gutter: 24px; }
   .projects-grid { grid-template-columns: 1fr; }
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
   .header-spacer { display: none; }
+  .header-name {
+    text-align: center;
+    order: 1;
+  }
+  .header-name h1 {
+    font-size: 32px;
+  }
+  .btn-contact {
+    order: 2;
+  }
+
+  .modal {
+    margin: 48px 4px;   /* more top/bottom space, no side margins */
+    max-height: calc(100vh - 96px); 
+    border-radius: 20px;
+  }
+
+
   .modal-body { padding: 8px 24px 40px; }
-  .modal-meta { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .modal-meta { grid-template-columns: 1fr; gap: 12px; }
   nav { max-width: 100%; }
   body::before,
   body::after {
@@ -1085,19 +1109,71 @@ footer {
   .modal.modal--vishwas .vishwas-interviews {
     grid-template-columns: 1fr;
   }
+
+    .modal-card {
+    width: 92%;
+  }
 }
 
+
+
 @media (max-width: 600px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .header-spacer {
+    display: none;
+  }
+  
+  .header-name {
+    text-align: center;
+    order: 1;
+  }
+  
+  .header-name h1 {
+    font-size: 28px;
+  }
+  
+  .header-name p {
+    margin-top: 8px;
+  }
+  
+  .btn-contact {
+    order: 2;
+    margin-top: 4px;
+  }
+  
   .modal-backdrop { padding: 16px; }
+
   .modal-title { font-size: 24px; }
   body::before,
   body::after {
     width: 200px;
     height: 200px;
   }
+
+  .modal-block-spacing.space-16 { padding: 12px; }
+
+  .modal-block-spacing.space-32 { padding: 20px; }
+
+  .modal-block-spacing.space-48 { padding: 28px; }
+
+  .modal-block-spacing.space-64 { padding: 36px; }
+
+  .modal-block-spacing.space-128 { padding: 48px; }
+
+}
+
   .footer-inner {
     flex-direction: column;
     gap: 16px;
+  }
+
+    .modal-card {
+    width: 97%;
   }
 }
 

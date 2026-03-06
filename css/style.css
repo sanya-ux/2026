@@ -1024,7 +1024,7 @@ footer {
 .footer-inner {
   display: flex;
   align-items: center;
-  /*justify-content: center;*/
+  justify-content: center;
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
@@ -1168,8 +1168,8 @@ footer {
 }
 
   .footer-inner {
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row;
+    gap: 20px;
   }
 
     .modal-card {

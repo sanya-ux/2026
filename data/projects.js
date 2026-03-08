@@ -752,6 +752,13 @@ const artworks = {
 // Essays shown under the Work tab
 const essays = [
   {
+    id: 'vibecode',
+    title: 'Navigating AI-Assisted Coding as a Designer',
+    description: 'On prompts, prototypes, and the strange experience of building something you only half understand.',
+    url: 'https://medium.com/design-bootcamp/navigating-ai-assisted-coding-as-a-designer-8380779f5215',
+    image: 'projects/essays/vcover.jpg'
+  },
+  {
     id: 'vr-roopro',
     title: 'Mistakes I made designing a VR game | Lessons I learnt | Part 1',
     description: 'Setting boundaries and learning about pre-production as we go!',

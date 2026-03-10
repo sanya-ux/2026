@@ -628,7 +628,30 @@ doromind: {
       {type: 'spacing', space: 64 }
     ]
   },
-
+  motionFolio: {
+    id: 'motionFolio',
+    title: 'Motion & UI Folio',
+    hoverTitle: 'Compilation',
+    timeline: 'Ongoing',
+    keywords: 'Motion Design, UI, Prototyping',
+    softwares: 'After Effects, Figma, Blender',
+    //tagline: 'Selected experiments in motion and interactive UI.',
+    image: 'images/ui-folio.jpg',
+    layout: 'wide',
+    content: [
+      { type: 'youtube', src: 'https://www.youtube.com/embed/N-5--dIyfCI?si=6hWTTdCyZd4fOmxa'},
+      {type: 'spacing', space: 32 },      
+      { type: 'youtube', src: 'https://www.youtube.com/embed/DDomDkabLE8?si=R58QE9Q9hvZeUBZ8'},   
+      {type: 'spacing', space: 16 },      
+      {type: 'image', src: 'projects/uifolio/roopmenu.jpg' },
+      {type: 'gallery2', images: ['projects/uifolio/roopsettings.jpg', 'projects/uifolio/roopload.jpg'], columns: 2 },
+      {type: 'imagemedium', src: 'projects/uifolio/gassygus.jpg' },
+      {type: 'gallery3', images: ['projects/uifolio/linkedin.jpg', 'projects/uifolio/sweet.jpg', 'projects/uifolio/cafe.jpg'], columns: 3 },
+      //{type: 'spacing', space: 16 },
+      {type: 'imagemedium', src: 'projects/uifolio/gameover.jpg' },
+      {type: 'imagemedium', src: 'projects/uifolio/christmas.jpg' }    
+    ]
+  },
 };
 
 const artworks = {
@@ -764,13 +787,6 @@ const essays = [
     description: 'Setting boundaries and learning about pre-production as we go!',
     url: 'https://medium.com/@snyy/mistakes-i-made-designing-a-vr-game-lessons-i-learnt-part-1-af8fb1d22047',
     image: 'projects/essays/vr_roopro.png'
-  },
-  {
-    id: 'blender',
-    title: 'I am convinced Blender is Gamified',
-    description: 'Exploring Blender Through the Lens of Game Design Principles',
-    url: 'https://medium.com/design-bootcamp/i-am-convinced-blender-is-gamified-daa979ba02fd',
-    image: 'projects/essays/blender.jpg'
   }
 ];
 

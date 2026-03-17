@@ -77,6 +77,51 @@ const projects = {
       {type: 'spacing', space: 64 }
     ]
   },
+
+
+  visualFolio: {
+    id: 'visualFolio',
+    title: 'Visual Folio',
+    hoverTitle: 'Compilation',
+    timeline: 'Ongoing',
+    keywords: 'Visual Design, Illustration, Concept Art',
+    softwares: 'Procreate, Photoshop',
+    //tagline: 'Selected experiments in motion and interactive UI.',
+    image: 'images/visual.jpg',
+    content: [
+
+    //roop
+      { type: 'imagemedium', src: 'projects/essays/vr-roopro.png' },
+      {type: 'spacing', space: 32 },      
+      { type: 'centertext', level: 2, text: 'Storyboarding Visuals for a VR Experience' },
+      { type: 'image', src: 'projects/visual/SB4.jpg' },   
+      {type: 'spacing', space: 16 },    
+      { type: 'image', src: 'projects/visual/SB5.jpg' },   
+      {type: 'spacing', space: 32 },      
+      { type: 'centertext', level: 2, text: 'Character Design' },
+      { type: 'image', src: 'projects/visual/roop.jpg' },
+
+      //elle
+      { type: 'centerheading', text: 'Concept art for a hypothetical RPG-platformer' },
+      //{ type: 'centertext', text: 'When Ori meets Arriety' },
+      {type: 'image', src: 'projects/visual/elle1.jpeg', caption: 'When Ori meets Arriety' },
+      {type: 'image', src: 'projects/visual/elle2.jpeg' },
+      {type: 'image', src: 'projects/visual/elle7.jpeg', caption: 'Quick Ideation for environment and level design' },
+      {type: 'image', src: 'projects/visual/elle4.jpeg', caption: 'Prop Design ideation' },
+
+      //arena
+      { type: 'centerheading', text: 'Critters Concept Art' },
+      { type: 'gallery2', images: ['projects/visual/arena2.jpg', 'projects/visual/arena4.jpg', 'projects/visual/arena3.jpg', 'projects/visual/arena1.jpg'], columns: 2 },      
+
+//miscxxx
+      { type: 'centerheading', text: 'Miscellaneous' },
+      {type: 'image', src: 'projects/visual/max1.jpeg', caption: 'Illustration for Max life ad campaign (academic)' },
+      {type: 'image', src: 'projects/visual/Drawing 2.jpeg', caption: 'Illustration for Physics textbook' },
+      {type: 'image', src: 'projects/visual/ghib.png' },
+      {type: 'spacing', space: 128 },
+
+    ]
+  },
 doromind: {
     id: 'doromind',
     title: 'DoroMind — Productivity App Redesign',
@@ -637,7 +682,7 @@ doromind: {
     softwares: 'After Effects, Figma, Blender',
     //tagline: 'Selected experiments in motion and interactive UI.',
     image: 'images/ui-folio.jpg',
-    layout: 'wide',
+    //layout: 'wide',
     content: [
       { type: 'youtube', src: 'https://www.youtube.com/embed/N-5--dIyfCI?si=6hWTTdCyZd4fOmxa'},
       {type: 'spacing', space: 32 },      
@@ -754,6 +799,11 @@ const artworks = {
     id: 'illustration-2',
     category: 'illustration',
     image: 'art/illustration/hz5.jpg'
+  },
+    illustrationb: {
+    id: 'illustration-b',
+    category: 'illustration',
+    image: 'art/illustration/basketcase.jpg'
   },
   illustration3: {
     id: 'illustration-3',

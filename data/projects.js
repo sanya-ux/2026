@@ -89,23 +89,28 @@ const projects = {
     //tagline: 'Selected experiments in motion and interactive UI.',
     image: 'images/visual.jpg',
     content: [
+      {type: 'spacing', space: 32 },      
+
+      {type: 'centertext', text: 'A collection of concept explorations and storyboards - focused on ideation, world-building, and translating ideas into experiences.'},
+      {type: 'spacing', space: 32 },      
 
     //roop
-      { type: 'imagemedium', src: 'projects/essays/vr-roopro.png' },
-      {type: 'spacing', space: 32 },      
-      { type: 'centertext', level: 2, text: 'Storyboarding Visuals for a VR Experience' },
+      { type: 'imagemedium', src: 'projects/essays/vr_roopro.png' },
+      {type: 'spacing', space: 16 },      
+      //{ type: 'centertext', level: 2, text: 'Storyboarding Visuals for a VR Experience' },
       { type: 'image', src: 'projects/visual/SB4.jpg' },   
       {type: 'spacing', space: 16 },    
       { type: 'image', src: 'projects/visual/SB5.jpg' },   
       {type: 'spacing', space: 32 },      
-      { type: 'centertext', level: 2, text: 'Character Design' },
-      { type: 'image', src: 'projects/visual/roop.jpg' },
+      //{ type: 'centertext', level: 2, text: 'Character Design' },
+      { type: 'image', src: 'projects/visual/roop.jpg', caption: 'Character Design' },
+      { type: 'spacing', space: 32 },
 
       //elle
       { type: 'centerheading', text: 'Concept art for a hypothetical RPG-platformer' },
       //{ type: 'centertext', text: 'When Ori meets Arriety' },
-      {type: 'image', src: 'projects/visual/elle1.jpeg', caption: 'When Ori meets Arriety' },
-      {type: 'image', src: 'projects/visual/elle2.jpeg' },
+      {type: 'image', src: 'projects/visual/elle2.jpeg', caption: 'When Ori meets Arriety' },
+      //{type: 'image', src: 'projects/visual/elle2.jpeg' },
       {type: 'image', src: 'projects/visual/elle7.jpeg', caption: 'Quick Ideation for environment and level design' },
       {type: 'image', src: 'projects/visual/elle4.jpeg', caption: 'Prop Design ideation' },
 

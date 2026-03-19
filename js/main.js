@@ -16,16 +16,16 @@ function initPortfolio() {
   const projects = window.portfolioData?.projects || {};
   const artworks = window.portfolioData?.artworks || {};
   const essays = window.portfolioData?.essays || [];
-  
+
   // Render projects grid in Work tab
   renderProjectsGrid(projects);
-  
+
   // Render artworks carousel in Art tab
   renderArtCarousel(artworks);
-  
+
   // Render essays section in Work tab
   renderEssays(essays);
-  
+
   // Initialize other functionality
   initModal();
   initTabs();
@@ -34,17 +34,17 @@ function initPortfolio() {
 function renderProjectsGrid(projects) {
   const grid = document.getElementById('projectsGrid');
   if (!grid) return;
-  
+
   const projectArray = Object.values(projects);
-  
+
   if (projectArray.length === 0) {
     grid.innerHTML = '<p style="color: #888;">No projects yet. Add projects in data/projects.js</p>';
     return;
   }
-  
+
   // Clear existing content
   grid.innerHTML = '';
-  
+
   // Loop through projects and create cards
   projectArray.forEach(item => {
     const card = document.createElement('div');
@@ -53,28 +53,28 @@ function renderProjectsGrid(projects) {
       card.classList.add('card-wide');
     }
     card.setAttribute('data-id', item.id);
-    
+
     // Create image element - use cover if available, otherwise image
     const img = document.createElement('img');
     img.src = item.cover || item.image;
     img.alt = item.title || '';
     img.loading = 'lazy';
-    
+
     // Create overlay
     const overlay = document.createElement('div');
     overlay.className = 'card-overlay';
-    
+
     const label = document.createElement('span');
     label.className = 'card-label';
     label.textContent = item.hoverTitle || item.title || '';
-    
+
     overlay.appendChild(label);
     card.appendChild(img);
     card.appendChild(overlay);
-    
+
     // Add click event to call openModal(item.id)
     card.addEventListener('click', () => openModal(item.id));
-    
+
     // Append card to grid
     grid.appendChild(card);
   });
@@ -85,15 +85,15 @@ function renderArtCarousel(artworks) {
   const track2 = document.getElementById('artCarouselTrack2');
   const track3 = document.getElementById('artCarouselTrack3');
   const track4 = document.getElementById('artCarouselTrack4');
-  
+
   const allArtworks = Object.values(artworks || {});
-  
+
   if (allArtworks.length === 0) {
     if (track1) track1.innerHTML = '<p style="color: #888;">No artworks yet.</p>';
     if (track2) track2.innerHTML = '<p style="color: #888;">No artworks yet.</p>';
     return;
   }
-  
+
   // First carousel row - Game Art
   if (track1) {
     const rowArtworks1 = allArtworks.filter(a => a.category === 'game-art');
@@ -104,10 +104,10 @@ function renderArtCarousel(artworks) {
         <img src="${artwork.image}" alt="${artwork.title}" loading="lazy" />
       </div>
     `).join('');
-    
+
     enableArtOverlayForTrack(track1);
   }
-  
+
   // Second carousel row - Environment
   if (track2) {
     const rowArtworks2 = allArtworks.filter(a => a.category === 'environment');
@@ -118,7 +118,7 @@ function renderArtCarousel(artworks) {
         <img src="${artwork.image}" alt="${artwork.title}" loading="lazy" />
       </div>
     `).join('');
-    
+
     enableArtOverlayForTrack(track2);
   }
 
@@ -171,7 +171,7 @@ function enableArtOverlayForTrack(track) {
 // Middle mouse button (middle-click) drag scrolling
 function setupMiddleMouseScroll(track) {
   if (!track) return;
-  
+
   let isMiddleMouseDown = false;
   let startX = 0;
   let scrollLeft = 0;
@@ -214,16 +214,16 @@ function setupMiddleMouseScroll(track) {
 function renderEssays(essays) {
   const list = document.querySelector('.essays-list');
   if (!list) return;
-  
+
   // If no essays provided, hide the section
   if (!essays || essays.length === 0) {
     list.innerHTML = '';
     list.parentElement.style.display = 'none';
     return;
   }
-  
+
   list.innerHTML = '';
-  
+
   essays.forEach(essay => {
     const link = document.createElement('a');
     link.className = 'essay-item';
@@ -237,7 +237,7 @@ function renderEssays(essays) {
       link.setAttribute('aria-disabled', 'true');
       link.addEventListener('click', (e) => e.preventDefault());
     }
-    
+
     let thumb;
     if (essay.image) {
       thumb = document.createElement('img');
@@ -250,26 +250,26 @@ function renderEssays(essays) {
       thumb = document.createElement('div');
       thumb.className = 'essay-thumb';
     }
-    
+
     const content = document.createElement('div');
     content.className = 'essay-content';
-    
+
     const titleEl = document.createElement('h3');
     titleEl.className = 'essay-title';
     titleEl.textContent = essay.title || '';
-    
+
     const descEl = document.createElement('p');
     descEl.className = 'essay-desc';
     descEl.textContent = essay.description || '';
-    
+
     content.appendChild(titleEl);
     if (essay.description) {
       content.appendChild(descEl);
     }
-    
+
     link.appendChild(thumb);
     link.appendChild(content);
-    
+
     list.appendChild(link);
   });
 }
@@ -289,7 +289,7 @@ function openModal(projectKey) {
   // Try both projects and artworks
   const allData = { ...window.portfolioData?.projects, ...window.portfolioData?.artworks };
   const p = allData[projectKey];
-  
+
   if (!p) return;
 
   // Build generic content blocks if available
@@ -301,21 +301,21 @@ function openModal(projectKey) {
   // Helper function to render any block
   function renderBlock(block) {
     const customClass = block.class ? ` ${block.class}` : '';
-    
+
     switch (block.type) {
-        case 'spacing':
+      case 'spacing':
         const spaceClass = block.space ? ` space-${block.space}` : '';
-          return `<div class="modal-block-spacing${spaceClass}"></div>`;
-        }
+        return `<div class="modal-block-spacing${spaceClass}"></div>`;
+    }
 
     switch (block.type) {
       case 'heading': {
         const level = block.level || 2;
         return `<h${level} class="modal-block-heading${customClass}">${block.text}</h${level}>`;
       }
-      
+
       case 'text':
-      const smallClass = block.small ? ' modal-block-text-small' : '';
+        const smallClass = block.small ? ' modal-block-text-small' : '';
         return `<p class="modal-block-text${customClass}${smallClass}">${block.text}</p>`;
       case 'centertext':
         return `<p class="modal-block-centertext${customClass}">${block.text}</p>`;
@@ -340,24 +340,24 @@ function openModal(projectKey) {
       case 'imagesmall':
         return `<figure class="modal-block-imagesmall${customClass}"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" />${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
 
-       case 'imagesmall2':
+      case 'imagesmall2':
         return `<figure class="modal-block-imagesmall2${customClass}"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" />${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
-     
-      
-            case 'imagemedium':
+
+
+      case 'imagemedium':
         return `<figure class="modal-block-imagemedium${customClass}"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" />${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
 
       case 'imagestretch':
         return `<figure class="modal-block-imagestretch${customClass}"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" />${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
-     
+
       case 'imagebig':
         return `<figure class="modal-block-imagebig${customClass}"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" />${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
 
-        case 'video':
+      case 'video':
         return `<div class="modal-block-video${customClass}"><video controls preload="metadata" poster="${block.poster || ''}"><source src="${block.src}" type="video/mp4" /></video></div>`;
-      
-        case 'youtube':
-  return `<div class="modal-block-video${customClass}">
+
+      case 'youtube':
+        return `<div class="modal-block-video${customClass}">
     <iframe
       src="${block.src}"
       title="YouTube video"
@@ -366,10 +366,10 @@ function openModal(projectKey) {
     </iframe>
   </div>`;
 
-     // Gallery blocks - display images in a grid with specified columns
-        case 'gallery3': {
-        const cols = block.columns || 3;
-        return `<div class="modal-block-gallery3${customClass}" style="--columns: ${cols}">${block.images.map(img => `<img src="${img}" alt="" loading="lazy" />`).join('')}</div>`;
+      // Gallery blocks - display images in a grid with specified columns
+      case 'gallery3': {
+        const captions = block.captions || [];
+        return `<div class="modal-block-gallery3${customClass}" style="--columns: ${cols}">${block.images.map((img, i) => captions[i] ? `<figure style="margin:0;"><img src="${img}" alt="" loading="lazy" /><figcaption style="font-size:13px; font-weight:200; color:var(--primarytext); margin-top:8px; text-align:center;">${captions[i]}</figcaption></figure>` : `<img src="${img}" alt="" loading="lazy" />`).join('')}</div>`;
       }
       case 'gallery2': {
         const cols = block.columns || 2;
@@ -377,8 +377,8 @@ function openModal(projectKey) {
       }
       case 'quote':
         return `<blockquote class="modal-block-quote${customClass}"><p>${block.text}</p>${block.author ? `<cite>— ${block.author}</cite>` : ''}</blockquote>`;
-      
-        case 'row': {
+
+      case 'row': {
         // Two-column row: { type: 'row', left: [...], right: [...] }
         const leftContent = (block.left || []).map(b => renderBlock(b)).join('');
         const rightContent = (block.right || []).map(b => renderBlock(b)).join('');
@@ -459,7 +459,7 @@ function addVishwasPlaceholders(root) {
     }
   }
 
- // insertPlaceholderAfterHeading('DigiLocker: Digital Asset Nomination and Claim', 'Overview visuals');
+  // insertPlaceholderAfterHeading('DigiLocker: Digital Asset Nomination and Claim', 'Overview visuals');
 }
 
 
@@ -553,14 +553,14 @@ const CardColors = {
 // Usage: applyCardColors(element, 'accent') or applyCardColors(element, customColorObject)
 function applyCardColors(cardElement, colorKey) {
   if (!cardElement) return;
-  
+
   let colors;
   if (typeof colorKey === 'string') {
     colors = CardColors[colorKey] || CardColors.secondary;
   } else {
     colors = colorKey; // Use custom object passed directly
   }
-  
+
   cardElement.style.setProperty('--card-bg', colors.bg);
   cardElement.style.setProperty('--card-title-color', colors.title);
   cardElement.style.setProperty('--card-text-color', colors.text);
@@ -571,10 +571,10 @@ function applyCardColors(cardElement, colorKey) {
 function createColoredCard(data, colorKey = 'secondary') {
   const card = document.createElement('div');
   card.className = 'modal-card';
-  
+
   // Apply colors
   applyCardColors(card, colorKey);
-  
+
   // Build card content
   let cardContent = '';
   if (data.image) {
@@ -591,7 +591,7 @@ function createColoredCard(data, colorKey = 'secondary') {
     cardContent += `<ul class="modal-card-list">${data.items.map(item => `<li>${item}</li>`).join('')}</ul>`;
   }
   cardContent += '</div>';
-  
+
   card.innerHTML = cardContent;
   return card;
 }

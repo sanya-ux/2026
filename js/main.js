@@ -29,6 +29,7 @@ function initPortfolio() {
   // Initialize other functionality
   initModal();
   initTabs();
+  initThemeToggle();
 }
 
 function renderProjectsGrid(projects) {
@@ -321,6 +322,8 @@ function openModal(projectKey) {
         return `<p class="modal-block-centertext${customClass}">${block.text}</p>`;
       case 'centerheading':
         return `<p class="modal-block-centerheading${customClass}">${block.text}</p>`;
+      case 'centertextwide':
+        return `<p class="modal-block-centertextwide${customClass}">${block.text}</p>`;
       case 'smallheading':
         return `<p class="modal-block-smallheading${customClass}">${block.text}</p>`;
 
@@ -368,12 +371,14 @@ function openModal(projectKey) {
 
       // Gallery blocks - display images in a grid with specified columns
       case 'gallery3': {
+        const cols = block.columns || 3;
         const captions = block.captions || [];
         return `<div class="modal-block-gallery3${customClass}" style="--columns: ${cols}">${block.images.map((img, i) => captions[i] ? `<figure style="margin:0;"><img src="${img}" alt="" loading="lazy" /><figcaption style="font-size:13px; font-weight:200; color:var(--primarytext); margin-top:8px; text-align:center;">${captions[i]}</figcaption></figure>` : `<img src="${img}" alt="" loading="lazy" />`).join('')}</div>`;
       }
       case 'gallery2': {
         const cols = block.columns || 2;
-        return `<div class="modal-block-gallery2${customClass}" style="--columns: ${cols}">${block.images.map(img => `<img src="${img}" alt="" loading="lazy" />`).join('')}</div>`;
+        const captions = block.captions || [];
+        return `<div class="modal-block-gallery2${customClass}" style="--columns: ${cols}">${block.images.map((img, i) => captions[i] ? `<figure style="margin:0;"><img src="${img}" alt="" loading="lazy" /><figcaption style="font-size:13px; font-weight:200; color:var(--primarytext); margin-top:8px; text-align:center;">${captions[i]}</figcaption></figure>` : `<img src="${img}" alt="" loading="lazy" />`).join('')}</div>`;
       }
       case 'quote':
         return `<blockquote class="modal-block-quote${customClass}"><p>${block.text}</p>${block.author ? `<cite>— ${block.author}</cite>` : ''}</blockquote>`;
@@ -594,4 +599,29 @@ function createColoredCard(data, colorKey = 'secondary') {
 
   card.innerHTML = cardContent;
   return card;
+}
+
+// ── THEME TOGGLE ──
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('themeToggle');
+  if (!toggleBtn) return;
+
+  // Check local storage for saved theme, default to dark
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'light') {
+    document.documentElement.removeAttribute('data-theme');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
 }

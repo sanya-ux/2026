@@ -1250,6 +1250,10 @@ footer {
   .modal-card {
     width: 92%;
   }
+
+  .modal-block-gallery3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 
@@ -1317,6 +1321,10 @@ footer {
     padding: 48px;
   }
 
+  .modal-block-gallery2,
+  .modal-block-gallery3 {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer-inner {

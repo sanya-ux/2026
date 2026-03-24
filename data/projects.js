@@ -14,6 +14,63 @@
    =========================================== */
 
 const projects = {
+
+  doromind: {
+    id: 'doromind',
+    title: 'DoroMind — Productivity App Redesign',
+    hoverTitle: 'Productivity App | UX Design',
+    timeline: '2026',
+    keywords: 'UX Design, Pomodoro Timer',
+    softwares: 'Figma',
+    //tagline: 'Small habits, big clarity',
+    cover: 'images/doromind.jpg',
+    content: [
+      { type: 'centertext', level: 2, text: 'This project is an exploration of calm productivity, enabling students to plan, focus, and reflect on their effort through a minimal and supportive interface.' },
+      { type: 'image', src: 'projects/doromind/images/doro 11.jpg' },
+      { type: 'quote', text: 'The intent was to rework both function and aesthetic to improve clarity, usability, and long-term engagement.' },
+      //{ type: 'heading', level: 3, text: 'The Challenge' },
+      { type: 'spacing', space: 16 },
+      { type: 'card', class: 'color-doro', title: 'The Challenge', text: 'Design a focused, low-friction Pomodoro experience that helps students manage long study hours, plan tasks ahead, and stay motivated—without overwhelming them.' },
+      // { type: 'heading', text: 'Product Strategy' },
+      { type: 'card', class: 'color-doro', title: 'Product Strategy', text: 'Prioritize quick entry into focus sessions, meaningful task organization, and motivation through subtle rewards—balancing productivity with mental ease.' },
+      { type: 'spacing', space: 16 },
+      { type: 'image', src: 'projects/doromind/images/doro 8.jpg' },
+      //{ type: 'paragraph', text: 'We chose soft, calming colors to evoke tranquility.' },
+      { type: 'gallery2', images: ['projects/doromind/images/doro 12.jpg', 'projects/doromind/images/doro 9.jpg'], columns: 2 },
+      { type: 'heading', text: 'Key Features' },
+      {
+        type: 'list', ordered: false, items: [
+          'Focused Sessions- Minimal & focused UI',
+          'Actionable Task Cards- Complete, move, delete, filter',
+          'Progress Insights- Clear daily & weekly tracking',
+          'Streaks to build Build consistency',
+          'Gentle motivation & realistic daily targets',
+          'White Noise — Distraction-free focus'
+        ]
+      },
+      { type: 'spacing', space: 16 },
+      { type: 'centertext', text: 'Research and interviews revealed that students struggle to plan weekly tasks and track long study hours. Existing apps either lack depth or overload users with features, reducing long-term engagement.' },
+      { type: 'spacing', space: 16 },
+      { type: 'image', src: 'projects/doromind/images/user flow.png' },
+      { type: 'image', src: 'projects/doromind/images/user persona.jpg' },
+      { type: 'image', src: 'projects/doromind/images/design guide.png' },
+      { type: 'spacing', space: 16 },
+      { type: 'heading', text: 'Design Consistency' },
+      { type: 'paragraph', text: 'A dark, minimal palette paired with a calm visual hierarchy reduces cognitive load and keeps the interface effortless, distraction-free, and easy to return to.' },
+      { type: 'image', src: 'projects/doromind/images/doro 3.jpg' },
+      { type: 'image', src: 'projects/doromind/images/doro 14.jpg' },
+      { type: 'spacing', space: 32 },
+      { type: 'gallery2', images: ['projects/doromind/images/doro 6.jpg', 'projects/doromind/images/doro 5.jpg'], columns: 2 },
+      { type: 'centertext', text: 'The analytics screen delivers meaningful daily and weekly focus insights for realistic self-tracking, while the task list uses priority-based, action-driven cards to support structured and flexible planning.' },
+      { type: 'image', src: 'projects/doromind/images/doro 4.jpg' },
+      { type: 'image', src: 'projects/doromind/images/doro 2.jpg' }, { type: 'gallery2', images: ['projects/doromind/images/doro 13.png', 'projects/doromind/images/doro 10.jpg'], columns: 2 },
+      // { type: 'quote', text: 'The new identity feels both timeless and fresh.', author: 'CEO, Doromind' },
+      { type: 'spacing', space: 16 },
+      { type: 'centerheading', text: 'Focus, designed with restraint.' },
+      { type: 'spacing', space: 64 }
+    ]
+  },
+
   threadspace: {
     id: 'threadspace',
     title: 'ThreadSpace — VR Prototyping',
@@ -95,8 +152,8 @@ const projects = {
     content: [
       { type: 'centerheading', text: 'Designing an Immersive Folk Narrative in VR' },
       { type: 'spacing', space: 16 },
-      { type: 'paragraph', text: 'Roop Ro Rajasthan is a VR experience that explores how immersive design can support cultural preservation. It reinterprets the traditional paṛ storytelling form into an interactive, spatial narrative where players engage with folklore through exploration and environmental cues.' },
-      { type: 'paragraph', text: 'The project focuses on translating cultural research into intuitive interactions, balancing authenticity with a stylized visual language inspired by Rajasthani architecture and landscapes. Iterative VR prototyping informed key decisions around navigation, storytelling flow, and player engagement.' },
+      { type: 'centertextwide', text: '<b>Roop Ro Rajasthan</b> is a VR experience that explores how immersive design can support <b>cultural preservation</b>. It reinterprets the traditional paṛ storytelling form into an interactive, spatial narrative where players engage with folklore through exploration and environmental cues.' },
+      { type: 'centertextwide', text: 'The project focuses on translating cultural research into intuitive interactions, balancing authenticity with a stylized visual language inspired by Rajasthani architecture and landscapes. Iterative VR prototyping informed key decisions around navigation, storytelling flow, and player engagement.' },
       { type: 'spacing', space: 16 },
 
       { type: 'imagestretch', src: 'projects/roopro/ss6.png' },
@@ -147,12 +204,12 @@ const projects = {
         type: 'list',
         ordered: false,
         items: [
-          'Unlocking Systems \u2013 Discover physical keys and use slingshot activation to open pathways, doors, and sacred chambers',
-          'Traversal & Movement \u2013 First-person navigation with climbing and jumping to access terrain, structures, and hidden spaces',
-          'Environmental Puzzles \u2013 Interact with cultural elements (chakki, ritual vessels, symbolic patterns) to solve context-based challenges',
-          'NPC Dialogue \u2013 Engage with Bhopas and villagers through riddles, metaphor, and fragmented storytelling to gain hints and narrative',
-          'Resource Exchange \u2013 Collect fruits (mango, khair) to trade, trigger story events, and unlock regions/artifacts',
-          'Narrative Collection \u2013 Locate and assemble sacred slabs to reconstruct the Pabuji epic and drive progression'
+          '<strong>Unlocking Systems</strong> \u2013 Discover physical keys and use slingshot activation to open pathways, doors, and sacred chambers',
+          '<strong>Traversal & Movement</strong> \u2013 First-person navigation with climbing and jumping to access terrain, structures, and hidden spaces',
+          '<strong>Environmental Puzzles</strong> \u2013 Interact with cultural elements (chakki, ritual vessels, symbolic patterns) to solve context-based challenges',
+          '<strong>NPC Dialogue</strong> \u2013 Engage with Bhopas and villagers through riddles, metaphor, and fragmented storytelling to gain hints and narrative',
+          '<strong>Resource Exchange</strong> \u2013 Collect fruits (mango, khair) to trade, trigger story events, and unlock regions/artifacts',
+          '<strong>Narrative Collection</strong> \u2013 Locate and assemble sacred slabs to reconstruct the Pabuji epic and drive progression'
         ]
       },
       { type: 'spacing', space: 32 },
@@ -317,61 +374,6 @@ const projects = {
       { type: 'image', src: 'projects/visual/ghib.png' },
       { type: 'spacing', space: 128 },
 
-    ]
-  },
-  doromind: {
-    id: 'doromind',
-    title: 'DoroMind — Productivity App Redesign',
-    hoverTitle: 'Productivity App | UX Design',
-    timeline: '2026',
-    keywords: 'UX Design, Pomodoro Timer',
-    softwares: 'Figma',
-    //tagline: 'Small habits, big clarity',
-    cover: 'images/doromind.jpg',
-    content: [
-      { type: 'centertext', level: 2, text: 'This project is an exploration of calm productivity, enabling students to plan, focus, and reflect on their effort through a minimal and supportive interface.' },
-      { type: 'image', src: 'projects/doromind/images/doro 11.jpg' },
-      { type: 'quote', text: 'The intent was to rework both function and aesthetic to improve clarity, usability, and long-term engagement.' },
-      //{ type: 'heading', level: 3, text: 'The Challenge' },
-      { type: 'spacing', space: 16 },
-      { type: 'card', class: 'color-doro', title: 'The Challenge', text: 'Design a focused, low-friction Pomodoro experience that helps students manage long study hours, plan tasks ahead, and stay motivated—without overwhelming them.' },
-      // { type: 'heading', text: 'Product Strategy' },
-      { type: 'card', class: 'color-doro', title: 'Product Strategy', text: 'Prioritize quick entry into focus sessions, meaningful task organization, and motivation through subtle rewards—balancing productivity with mental ease.' },
-      { type: 'spacing', space: 16 },
-      { type: 'image', src: 'projects/doromind/images/doro 8.jpg' },
-      //{ type: 'paragraph', text: 'We chose soft, calming colors to evoke tranquility.' },
-      { type: 'gallery2', images: ['projects/doromind/images/doro 12.jpg', 'projects/doromind/images/doro 9.jpg'], columns: 2 },
-      { type: 'heading', text: 'Key Features' },
-      {
-        type: 'list', ordered: false, items: [
-          'Focused Sessions- Minimal & focused UI',
-          'Actionable Task Cards- Complete, move, delete, filter',
-          'Progress Insights- Clear daily & weekly tracking',
-          'Streaks to build Build consistency',
-          'Gentle motivation & realistic daily targets',
-          'White Noise — Distraction-free focus'
-        ]
-      },
-      { type: 'spacing', space: 16 },
-      { type: 'centertext', text: 'Research and interviews revealed that students struggle to plan weekly tasks and track long study hours. Existing apps either lack depth or overload users with features, reducing long-term engagement.' },
-      { type: 'spacing', space: 16 },
-      { type: 'image', src: 'projects/doromind/images/user flow.png' },
-      { type: 'image', src: 'projects/doromind/images/user persona.jpg' },
-      { type: 'image', src: 'projects/doromind/images/design guide.png' },
-      { type: 'spacing', space: 16 },
-      { type: 'heading', text: 'Design Consistency' },
-      { type: 'paragraph', text: 'A dark, minimal palette paired with a calm visual hierarchy reduces cognitive load and keeps the interface effortless, distraction-free, and easy to return to.' },
-      { type: 'image', src: 'projects/doromind/images/doro 3.jpg' },
-      { type: 'image', src: 'projects/doromind/images/doro 14.jpg' },
-      { type: 'spacing', space: 32 },
-      { type: 'gallery2', images: ['projects/doromind/images/doro 6.jpg', 'projects/doromind/images/doro 5.jpg'], columns: 2 },
-      { type: 'centertext', text: 'The analytics screen delivers meaningful daily and weekly focus insights for realistic self-tracking, while the task list uses priority-based, action-driven cards to support structured and flexible planning.' },
-      { type: 'image', src: 'projects/doromind/images/doro 4.jpg' },
-      { type: 'image', src: 'projects/doromind/images/doro 2.jpg' }, { type: 'gallery2', images: ['projects/doromind/images/doro 13.png', 'projects/doromind/images/doro 10.jpg'], columns: 2 },
-      // { type: 'quote', text: 'The new identity feels both timeless and fresh.', author: 'CEO, Doromind' },
-      { type: 'spacing', space: 16 },
-      { type: 'centerheading', text: 'Focus, designed with restraint.' },
-      { type: 'spacing', space: 64 }
     ]
   },
 
@@ -824,6 +826,7 @@ const projects = {
 
     ]
   },
+
   aakara: {
     id: 'aakara',
     title: 'Aakara — Board Game Design',
@@ -892,6 +895,7 @@ const projects = {
       { type: 'spacing', space: 64 }
     ]
   },
+
   motionFolio: {
     id: 'motionFolio',
     title: 'Motion & UI Folio',

@@ -2,16 +2,7 @@
    Main Projects Data
    This file combines all project modules
    
-   NOTE: Each project has its own file in:
-   - data/projects/threadspace.js
-   - data/projects/vishwas.js
-   - data/projects/doromind.js
-   
-   Each artwork has its own file in:
-   - data/artworks/artwork1.js
-   
-   Add new projects/artworks by creating new files!
-   =========================================== */
+   */
 
 const projects = {
 

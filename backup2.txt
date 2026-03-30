@@ -55,3 +55,71 @@ essay!!
     url: 'https://medium.com/design-bootcamp/i-am-convinced-blender-is-gamified-daa979ba02fd',
     image: 'projects/essays/blender.jpg'
   }
+
+    cyber: {
+    id: 'cyber',
+    title: 'CRadar — Cybersecurity Dashboard',
+    hoverTitle: 'Productivity App | UX Design',
+    timeline: '2026',
+    keywords: 'UX Design, Dashboard',
+    softwares: 'Figma',
+    //tagline: 'Small habits, big clarity',
+    cover: 'images/doromind.jpg',
+    content: [
+      //{ type: 'centerheading', level: 2, text: 'Problem Statement' },
+      { type: 'centerheading', level: 2, text: 'Unified security view across fragmented tools' },
+      { type: 'spacing', space: 16 },
+      { type: 'centertext', text: 'Security teams struggle to connect threats, vulnerabilities, and business impact in a single workflow, resulting in delayed decisions, overlooked risks, and inefficient prioritization of mitigation efforts.' },
+      { type: 'spacing', space: 32 },
+      {
+        type: 'imagebg',
+        src: 'projects/doromind/images/doro 8.jpg',
+        opacity: 0.7, // Custom overlay opacity (0 to 1)
+        content: [
+          { type: 'centerheading', text: 'Background Section Example' },
+          { type: 'centertext', text: 'This text is rendered cleanly over the background image.' }
+        ]
+      },
+      { type: 'quote', text: 'The intent was to rework both function and aesthetic to improve clarity, usability, and long-term engagement.' },
+      //{ type: 'heading', level: 3, text: 'The Challenge' },
+      { type: 'spacing', space: 16 },
+      { type: 'card', class: 'color-doro', title: 'The Challenge', text: 'Design a focused, low-friction Pomodoro experience that helps students manage long study hours, plan tasks ahead, and stay motivated—without overwhelming them.' },
+      // { type: 'heading', text: 'Product Strategy' },
+      { type: 'card', class: 'color-doro', title: 'Product Strategy', text: 'Prioritize quick entry into focus sessions, meaningful task organization, and motivation through subtle rewards—balancing productivity with mental ease.' },
+      { type: 'spacing', space: 16 },
+      { type: 'image', src: 'projects/doromind/images/doro 8.jpg' },
+      //{ type: 'paragraph', text: 'We chose soft, calming colors to evoke tranquility.' },
+      { type: 'gallery2', images: ['projects/doromind/images/doro 12.jpg', 'projects/doromind/images/doro 9.jpg'], columns: 2 },
+      { type: 'heading', text: 'Key Features' },
+      {
+        type: 'list', ordered: false, items: [
+          'Focused Sessions- Minimal & focused UI',
+          'Actionable Task Cards- Complete, move, delete, filter',
+          'Progress Insights- Clear daily & weekly tracking',
+          'Streaks to build Build consistency',
+          'Gentle motivation & realistic daily targets',
+          'White Noise — Distraction-free focus'
+        ]
+      },
+      { type: 'spacing', space: 16 },
+      { type: 'centertext', text: 'Research and interviews revealed that students struggle to plan weekly tasks and track long study hours. Existing apps either lack depth or overload users with features, reducing long-term engagement.' },
+      { type: 'spacing', space: 16 },
+      { type: 'image', src: 'projects/doromind/images/user flow.png' },
+      { type: 'image', src: 'projects/doromind/images/user persona.jpg' },
+      { type: 'image', src: 'projects/doromind/images/design guide.png' },
+      { type: 'spacing', space: 16 },
+      { type: 'heading', text: 'Design Consistency' },
+      { type: 'paragraph', text: 'A dark, minimal palette paired with a calm visual hierarchy reduces cognitive load and keeps the interface effortless, distraction-free, and easy to return to.' },
+      { type: 'image', src: 'projects/doromind/images/doro 3.jpg' },
+      { type: 'image', src: 'projects/doromind/images/doro 14.jpg' },
+      { type: 'spacing', space: 32 },
+      { type: 'gallery2', images: ['projects/doromind/images/doro 6.jpg', 'projects/doromind/images/doro 5.jpg'], columns: 2 },
+      { type: 'centertext', text: 'The analytics screen delivers meaningful daily and weekly focus insights for realistic self-tracking, while the task list uses priority-based, action-driven cards to support structured and flexible planning.' },
+      { type: 'image', src: 'projects/doromind/images/doro 4.jpg' },
+      { type: 'image', src: 'projects/doromind/images/doro 2.jpg' }, { type: 'gallery2', images: ['projects/doromind/images/doro 13.png', 'projects/doromind/images/doro 10.jpg'], columns: 2 },
+      // { type: 'quote', text: 'The new identity feels both timeless and fresh.', author: 'CEO, Doromind' },
+      { type: 'spacing', space: 16 },
+      { type: 'centerheading', text: 'Focus, designed with restraint.' },
+      { type: 'spacing', space: 64 }
+    ]
+  },

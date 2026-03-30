@@ -353,6 +353,12 @@ function openModal(projectKey) {
       case 'imagestretch':
         return `<figure class="modal-block-imagestretch${customClass}"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" />${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
 
+      case 'imagebg': {
+        const bgContent = (block.content || []).map(b => renderBlock(b)).join('');
+        const opacityStyle = block.opacity !== undefined ? `--bg-opacity: ${block.opacity};` : '';
+        return `<div class="modal-block-imagebg${customClass}" style="background-image: url('${block.src}'); ${opacityStyle}"><div class="modal-imagebg-overlay"></div><div class="modal-imagebg-content">${bgContent}</div></div>`;
+      }
+
       case 'imagebig':
         return `<figure class="modal-block-imagebig${customClass}"><img src="${block.src}" alt="${block.caption || ''}" loading="lazy" />${block.caption ? `<figcaption>${block.caption}</figcaption>` : ''}</figure>`;
 

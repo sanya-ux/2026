@@ -786,6 +786,45 @@ h4.modal-block-heading {
   margin-left: -17%;
 }
 
+.modal-block-imagebg {
+  position: relative;
+  width: 134%;
+  margin-left: -17%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  padding: 80px 17%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-imagebg-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, var(--bg-opacity, 0.4));
+  z-index: 1;
+}
+
+.modal-imagebg-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Ensure text inside the image background is readable (white by default) */
+.modal-block-imagebg .modal-block-centerheading,
+.modal-block-imagebg .modal-block-smallheading,
+.modal-block-imagebg .modal-block-centertext,
+.modal-block-imagebg .modal-block-text,
+.modal-block-imagebg .modal-block-paragraph,
+.modal-block-imagebg .modal-block-centertextwide {
+  color: #fff;
+}
+
 .modal-block-imagebig img {
   width: 114%;
   border-radius: 12px;

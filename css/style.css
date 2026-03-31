@@ -703,7 +703,7 @@ main {
 .modal-block-list li {
   font-size: 16px;
   font-weight: 200;
-  line-height: 2.1;
+  line-height: 1.9;
   color: var(--secondarytext);
 }
 
@@ -911,6 +911,7 @@ h4.modal-block-heading {
 .modal-block-quote p {
   font-size: 18px;
   font-weight: 200;
+  line-height: 1.55;
   font-style: italic;
   text-align: center;
   color: var(--secondarytext);
@@ -1024,7 +1025,7 @@ h4.modal-block-heading {
 
 /* Predefined color variant classes for modal-card */
 .modal-card.color-primary {
-  --card-bg: var(--white);
+  --card-bg: var(--off);
   --card-title-color: var(--secondarytext);
   --card-text-color: var(--dark);
 }

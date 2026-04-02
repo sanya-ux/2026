@@ -6,6 +6,7 @@
 
 const projects = {
 
+
   doromind: {
     id: 'doromind',
     title: 'DoroMind — Productivity App Redesign',
@@ -59,6 +60,82 @@ const projects = {
       { type: 'spacing', space: 16 },
       { type: 'centerheading', text: 'Focus, designed with restraint.' },
       { type: 'spacing', space: 64 }
+    ]
+  },
+
+
+  cyber: {
+    id: 'cyber',
+    title: 'ScureR — Cybersecurity Dashboard',
+    hoverTitle: 'Cybersecurity Dashboard | UX Design',
+    timeline: 'Ongoing',
+    keywords: 'UX Design, Dashboard',
+    softwares: 'Figma',
+    //tagline: 'Small habits, big clarity',
+    cover: 'projects/scure/cover.jpg',
+    content: [
+      //{ type: 'centerheading', level: 2, text: 'Problem Statement' },
+      { type: 'centerheading', level: 2, text: '500 alerts. 6 hours. One analyst.' },
+      { type: 'spacing', space: 16 },
+      { type: 'centertext', text: 'Tier 1 SOC analysts in banking need to triage 500+ daily alerts within compliance-mandated response windows, but fragmented tooling and poor prioritization force constant context-switching, which means real threats get delayed escalation and analysts burn out within 18 months.' },
+      { type: 'spacing', space: 32 },
+      {
+        type: 'imagebg',
+        src: 'projects/scure/bg.jpg',
+        opacity: 0.7, // Custom overlay opacity (0 to 1)
+        content: [
+          { type: 'centerheading', text: 'The "Big Picture" Analysis' },
+          //{ type: 'centertext', text: 'This text is rendered cleanly over the background image.' }
+          { type: 'image', src: 'projects/scure/ques.png' },
+
+        ]
+      },
+      { type: 'spacing', space: 48 },
+      { type: 'image', src: 'projects/scure/tiers.jpg', caption: 'Understanding SOC Alert Tiers' },
+
+      { type: 'spacing', space: 32 },
+      { type: 'card', class: 'color-primary', title: 'Problem Statement', text: 'A missed P1 alert in a cardholder data environment isn\\\'t just an operational failure, it\\\'s a potential PCI-DSS breach and an RBI reporting obligation triggered within 2–6 hours." That reframes everything that follows from a "nice dashboard.' },
+      { type: 'spacing', space: 32 },
+      { type: 'card', class: 'color-dark', title: 'Solution', text: 'A single workspace that prioritises by urgency, preserves context across an entire investigation, and makes compliance an automatic outcome of good work — not an extra job at the end of a long shift.' },
+      { type: 'spacing', space: 32 },
+      { type: 'image', src: 'projects/scure/alert trajectory.jpg' },
+      { type: 'spacing', space: 32 },
+      { type: 'heading', text: 'The Red Sea' },
+      { type: 'paragraph', text: 'Tier 1 SOC analysts are drowning in a "Red Sea" of alerts. Current SIEM interfaces (Splunk/QRadar) are data-dense but information-poor.' },
+      {
+        type: 'list', ordered: false, items: [
+          '<strong>Cognitive Overload:</strong> Too many high-priority alerts with no clear "starting point."',
+          '<strong>Context Switching:</strong> Analysts lose 15% of their productivity jumping between 5+ tabs (email, logs, maps, CRM).',
+          '<strong>The "False Positive" Burnout:</strong> 80% of alerts are noise, leading to desensitization toward real threats.'
+        ]
+      },
+      { type: 'spacing', space: 32 },
+      { type: 'heading', text: 'Industry Standard Tools' },
+      { type: 'spacing', space: 16 },
+      { type: 'imagebig', src: 'projects/scure/comp.jpg' },
+      { type: 'spacing', space: 48 },
+      { type: 'heading', text: 'Preliminary Research' },
+      { type: 'spacing', space: 16 },
+      { type: 'imagebig', src: 'projects/scure/userdata.gif' },
+      { type: 'spacing', space: 32 },
+      { type: 'heading', text: 'User Persona' },
+      { type: 'spacing', space: 16 },
+      { type: 'imagebig', src: 'projects/scure/userpersonafull.jpg' },
+      { type: 'spacing', space: 48 },
+      { type: 'heading', text: 'User Flow' },
+      { type: 'spacing', space: 16 },
+      { type: 'imagebig', src: 'projects/scure/userflow.jpg' },
+      { type: 'spacing', space: 48 },
+      { type: 'heading', text: 'Information Architecture' },
+      { type: 'spacing', space: 16 },
+      { type: 'imagebig', src: 'projects/scure/IA.jpg' },
+      { type: 'spacing', space: 48 },
+      { type: 'heading', text: 'Wireframing' },
+      { type: 'spacing', space: 16 },
+      { type: 'imagebig', src: 'projects/scure/wireframes.png' },
+      { type: 'spacing', space: 48 },
+      { type: 'quote', text: 'Project Under Works! Thank you for your Patience' },
+      { type: 'spacing', space: 128 }
     ]
   },
 
@@ -354,7 +431,7 @@ const projects = {
         right: [
 
           {
-            type: 'card', class: 'color-cool', text: 'Accumulation of digital assets in our lifetime can occupy huge amounts of space. Leaving them at the end of our life is not only unsustainable, it is not an easy task for our successors to manage either. We designed a solution that understands the stakeholders’ mindsets, motivations, needs and gaps.'
+            type: 'card', class: 'color-primary', text: 'Accumulation of digital assets in our lifetime can occupy huge amounts of space. Leaving them at the end of our life is not only unsustainable, it is not an easy task for our successors to manage either. We designed a solution that understands the stakeholders’ mindsets, motivations, needs and gaps.'
           },
           // { type: 'paragraph', text: 'We designed a solution that understands the stakeholders’ mindsets, motivations, needs and gaps.' },
         ],
@@ -785,14 +862,13 @@ const projects = {
     softwares: 'After Effects, Figma, Blender',
     //tagline: 'Selected experiments in motion and interactive UI.',
     image: 'images/ui-folio.jpg',
-    layout: 'wide',
+    //layout: 'wide',
     content: [
       { type: 'youtube', src: 'https://www.youtube.com/embed/N-5--dIyfCI?si=6hWTTdCyZd4fOmxa' },
       { type: 'spacing', space: 32 },
       { type: 'youtube', src: 'https://www.youtube.com/embed/DDomDkabLE8?si=R58QE9Q9hvZeUBZ8' },
       { type: 'spacing', space: 16 },
-      { type: 'image', src: 'projects/uifolio/roopmenu.jpg' },
-      { type: 'gallery2', images: ['projects/uifolio/roopsettings.jpg', 'projects/uifolio/roopload.jpg'], columns: 2 },
+      { type: 'video', src: 'projects/uifolio/doro_2.mp4' },
       { type: 'imagemedium', src: 'projects/uifolio/gassygus.jpg' },
       { type: 'gallery3', images: ['projects/uifolio/linkedin.jpg', 'projects/uifolio/sweet.jpg', 'projects/uifolio/cafe.jpg'], columns: 3 },
       //{type: 'spacing', space: 16 },

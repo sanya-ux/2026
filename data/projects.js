@@ -17,9 +17,10 @@ const projects = {
     //tagline: 'Small habits, big clarity',
     cover: 'images/doromind.jpg',
     content: [
-      { type: 'centertext', level: 2, text: 'This project is an exploration of calm productivity, enabling students to plan, focus, and reflect on their effort through a minimal and supportive interface.' },
+      { type: 'quote', level: 2, text: 'This project is an exploration of calm productivity, enabling students to plan, focus, and reflect on their effort through a minimal and supportive interface.' },
+      { type: 'spacing', space: 16 },
       { type: 'image', src: 'projects/doromind/images/doro 11.jpg' },
-      { type: 'quote', text: 'The intent was to rework both function and aesthetic to improve clarity, usability, and long-term engagement.' },
+      { type: 'centerheading', text: 'The intent was to rework both function and aesthetic to improve clarity, usability, and long-term engagement.' },
       //{ type: 'heading', level: 3, text: 'The Challenge' },
       { type: 'spacing', space: 16 },
       { type: 'card', class: 'color-doro', title: 'The Challenge', text: 'Design a focused, low-friction Pomodoro experience that helps students manage long study hours, plan tasks ahead, and stay motivated—without overwhelming them.' },
@@ -40,7 +41,7 @@ const projects = {
           'White Noise — Distraction-free focus'
         ]
       },
-      { type: 'spacing', space: 16 },
+      { type: 'spacing', space: 32 },
       { type: 'centertext', text: 'Research and interviews revealed that students struggle to plan weekly tasks and track long study hours. Existing apps either lack depth or overload users with features, reducing long-term engagement.' },
       { type: 'spacing', space: 16 },
       { type: 'image', src: 'projects/doromind/images/user flow.png' },
@@ -76,7 +77,7 @@ const projects = {
     content: [
       //{ type: 'centerheading', level: 2, text: 'Problem Statement' },
       { type: 'centerheading', level: 2, text: '500 alerts. 6 hours. One analyst.' },
-      { type: 'spacing', space: 16 },
+      { type: 'spacing', space: 8 },
       { type: 'centertext', text: 'Tier 1 SOC analysts in banking need to triage 500+ daily alerts within compliance-mandated response windows, but fragmented tooling and poor prioritization force constant context-switching, which means real threats get delayed escalation and analysts burn out within 18 months.' },
       { type: 'spacing', space: 32 },
       {

@@ -98,7 +98,7 @@ header {
 }
 
 .header-name p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--secondarytext);
   margin-top: 16px;
   font-weight: 200;
@@ -170,7 +170,7 @@ nav {
 }
 
 .nav-link {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--secondarytext);
   text-decoration: none;
   padding: 24px 24px;
@@ -296,7 +296,7 @@ main {
 
 .essays-heading {
   font-family: 'Public Sans', sans-serif;
-  font-size: 27px;
+  font-size: 28px;
   font-weight: 500;
   color: var(--primarytext);
   text-align: center;
@@ -411,7 +411,7 @@ main {
 }
 
 .about-text p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
   font-weight: 200;
   color: var(--primarytext);
@@ -570,14 +570,14 @@ main {
 
 .modal-meta-item label {
   display: block;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--secondarytext);
   margin-top: 16px;
   margin-bottom: 8px;
 }
 
 .modal-meta-item span {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: var(--primarytext);
 }
@@ -664,7 +664,7 @@ main {
 
 .modal-block-heading {
   font-family: 'Public Sans', sans-serif;
-  font-size: 27px;
+  font-size: 28px;
   font-weight: 500;
   color: var(--primarytext);
   margin-top: 48px;
@@ -673,7 +673,7 @@ main {
 
 h3.modal-block-heading,
 h4.modal-block-heading {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 400;
   margin-top: 36px;
   margin-bottom: 0px;
@@ -862,7 +862,7 @@ h4.modal-block-heading {
 .modal-block-quote cite {
   display: block;
   margin-top: 8px;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--primarytext);
   font-style: normal;
 }
@@ -882,8 +882,7 @@ h4.modal-block-heading {
   line-height: 1.55;
   text-align: center;
   color: var(--secondarytext);
-  max-width: 80%;
-  max-width: 600px;
+  max-width: 75%;
   margin: 0 auto;
   margin-bottom: 32px;
   margin-top: 0px;
@@ -902,7 +901,7 @@ h4.modal-block-heading {
 }
 
 .modal-block-centerheading {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 250;
   margin-top: 64px;
   margin-bottom: 24px;
@@ -1027,7 +1026,7 @@ h4.modal-block-heading {
 }
 
 .modal-card-text {
-  font-size: 17.5px;
+  font-size: 18px;
   font-weight: 250;
   line-height: 1.55;
   color: var(--secondarytext);
@@ -1345,7 +1344,7 @@ footer {
 }
 
 .art-carousel-description {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.55;
   color: var(--primarytext);
 }

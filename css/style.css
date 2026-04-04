@@ -158,15 +158,15 @@ header {
 /* ── NAV ── */
 nav {
   border-bottom: 1px solid var(--border);
-  margin-top: calc(var(--grid) * 7);
-  max-width: 800px;
+  margin-top: calc(var(--grid) * 6);
+  max-width: 480px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .nav-inner {
   display: flex;
-  gap: 0;
+  gap: 8px;
   justify-content: center;
 }
 
@@ -182,7 +182,7 @@ nav {
 
 .nav-link.active {
   color: var(--primarytext);
-  font-weight: 250;
+  font-weight: 350;
 }
 
 .nav-link.active::after {
@@ -191,20 +191,15 @@ nav {
   bottom: -1px;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 1.2px;
   background: var(--secondarytext);
 }
 
 .nav-link:hover {
-  color: var(--secondarytext);
+  color: var(--primarytext);
 }
 
-.nav-sep {
-  color: var(--border);
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-}
+
 
 /* ── GRID ── */
 main {
@@ -377,8 +372,8 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 280px) minmax(0, 1fr);
   gap: 40px;
-  align-items: center;
-  padding: 40px 0;
+  /*align-items: center;*/
+  padding: 12px 16px;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -408,6 +403,7 @@ main {
   font-size: 24px;
   font-weight: 450;
   color: var(--primarytext);
+  margin-top: 16px;
   margin-bottom: 16px;
 }
 
@@ -415,7 +411,7 @@ main {
   font-size: 16px;
   line-height: 1.55;
   font-weight: 200;
-  color: var(--primarytext);
+  color: var(--secondarytext);
   margin-bottom: 16px;
 }
 
@@ -1159,6 +1155,11 @@ footer {
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
+  .modal-block-image img {
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
   :root {
     --gutter: 24px;
   }
@@ -1306,6 +1307,15 @@ footer {
   .modal-block-gallery2,
   .modal-block-gallery3 {
     grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    row-gap: 16px;
+  }
+
+  .modal-block-imagebig img {
+    width: 110%;
+    margin-left: -5%;
   }
 }
 

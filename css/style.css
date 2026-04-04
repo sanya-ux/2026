@@ -13,6 +13,7 @@
 
 :root {
   --white: #ffffff;
+  --accent: #6193FF;
   --off: hsl(217, 30%, 95%);
   --bg: #f5f5f5;
   --dark: #2c2d2e;
@@ -91,9 +92,9 @@ header {
 
 .header-name h1 {
   font-family: 'Public Sans', sans-serif;
-  font-size: 40px;
-  font-weight: 600;
-  letter-spacing: -0.5px;
+  font-size: 44px;
+  font-weight: 450;
+  letter-spacing: -0.4px;
   color: var(--primarytext);
 }
 
@@ -150,7 +151,7 @@ header {
 .btn-icon {
   width: 16px;
   height: 16px;
-  color: #6193FF;
+  color: var(--accent);
   flex-shrink: 0;
 }
 

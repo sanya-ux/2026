@@ -871,9 +871,7 @@ const projects = {
       { type: 'video', src: 'projects/uifolio/doro_2.mp4' },
       { type: 'imagemedium', src: 'projects/uifolio/gassygus.jpg' },
       { type: 'gallery3', images: ['projects/uifolio/linkedin.jpg', 'projects/uifolio/sweet.jpg', 'projects/uifolio/cafe.jpg'], columns: 3 },
-      //{type: 'spacing', space: 16 },
-      { type: 'imagemedium', src: 'projects/uifolio/gameover.jpg' },
-      { type: 'imagemedium', src: 'projects/uifolio/christmas.jpg' }
+      { type: 'spacing', space: 16 },
     ]
   },
 };

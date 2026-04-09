@@ -8,7 +8,25 @@
 
 // Wait for DOM and data to load
 document.addEventListener('DOMContentLoaded', () => {
+  // Prevent browser from restoring previous scroll position
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   initPortfolio();
+
+  // Add scrolled class to header
+  const header = document.querySelector('header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
 });
 
 function initPortfolio() {
@@ -47,9 +65,21 @@ function renderProjectsGrid(projects) {
   grid.innerHTML = '';
 
   // Loop through projects and create cards
-  projectArray.forEach(item => {
+  let currentSlot = 0;
+  projectArray.forEach((item, index) => {
     const card = document.createElement('div');
     card.className = 'card';
+
+    // Calculate row for staggered animation so pairs appear together
+    const animDuration = 0.35; // Match CSS animation duration so rows wait for the previous to complete
+    const slotsNeeded = item.layout === 'wide' ? 2 : 1;
+    if (slotsNeeded === 2 && currentSlot % 2 !== 0) {
+      currentSlot += 1;
+    }
+    const currentRow = Math.floor(currentSlot / 2);
+    card.style.animationDelay = `${currentRow * animDuration}s`;
+    currentSlot += slotsNeeded;
+
     if (item.layout === 'wide') {
       card.classList.add('card-wide');
     }

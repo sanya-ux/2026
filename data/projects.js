@@ -64,6 +64,50 @@ const projects = {
     ]
   },
 
+  lms: {
+    id: 'lms',
+    title: 'LMS Dashboard',
+    hoverTitle: 'LMS Dashboard | UX Design',
+    timeline: '2026',
+    keywords: 'UX Design, Dashboard',
+    softwares: 'Figma',
+    //tagline: 'Small habits, big clarity',
+    cover: 'projects/lms/cover.jpg',
+    content: [
+      { type: 'image', src: 'projects/lms/cover.jpg' },
+      { type: 'spacing', space: 32 },
+      {
+        type: 'row',
+        left: [
+          { type: 'heading', text: 'Problem' }
+        ],
+        right: [
+          { type: 'smallheading', text: 'Our users are struggling with a fragmented onboarding experience and an overwhelming dashboard on the LMS, leading to disruption, confusion, and delayed task completion.' }
+        ]
+      },
+      { type: 'spacing', space: 32 },
+      { type: 'imagebig', src: 'projects/lms/timeline.jpg' },
+      { type: 'spacing', space: 16 },
+      { type: 'centerheading', text: 'A centralized platform for managing academic tasks, scheduling, and extracurricular activities, empowering students to stay organized and engaged throughout their university experience.' },
+      { type: 'spacing', space: 16 },
+      { type: 'imagebig', src: 'projects/lms/rationale.jpg' },
+      { type: 'spacing', space: 32 },
+      { type: 'smallheading', text: 'Strategy' },
+      { type: 'spacing', space: 16 },
+      { type: 'gallery3', images: ['projects/lms/strategy1.jpg', 'projects/lms/strategy2.jpg', 'projects/lms/strategy3.jpg'] },
+      { type: 'spacing', space: 32 },
+      { type: 'gallery2', images: ['projects/lms/widget1.jpg', 'projects/lms/widget2.jpg', 'projects/lms/widget3.jpg', 'projects/lms/widget4.jpg'] },
+      { type: 'spacing', space: 32 },
+      { type: 'smallheading', text: 'FTUE & Onboarding' },
+      { type: 'spacing', space: 8 },
+      { type: 'video', src: 'projects/lms/ftue.mp4' },
+      { type: 'spacing', space: 32 },
+      { type: 'imagebig', src: 'projects/lms/dashboard_mockup.jpg', caption: 'Dashboard' },
+      { type: 'spacing', space: 32 },
+      { type: 'imagebig', src: 'projects/lms/task_mockup.jpg', caption: 'Task Board' },
+      { type: 'spacing', space: 64 }
+    ]
+  },
 
   cyber: {
     id: 'cyber',

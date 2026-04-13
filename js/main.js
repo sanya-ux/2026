@@ -34,6 +34,7 @@ function initPortfolio() {
   const projects = window.portfolioData?.projects || {};
   const artworks = window.portfolioData?.artworks || {};
   const essays = window.portfolioData?.essays || [];
+  const reviews = window.portfolioData?.reviews || [];
 
   // Render projects grid in Work tab
   renderProjectsGrid(projects);
@@ -44,10 +45,42 @@ function initPortfolio() {
   // Render essays section in Work tab
   renderEssays(essays);
 
+  // Render reviews across tabs
+  renderReviews(reviews);
+
   // Initialize other functionality
   initModal();
   initTabs();
   initThemeToggle();
+}
+
+// Render Reviews section across tabs
+function renderReviews(reviews) {
+  const lists = document.querySelectorAll('.reviews-list');
+  if (!lists.length) return;
+
+  if (!reviews || reviews.length === 0) {
+    lists.forEach(list => {
+      const section = list.closest('.reviews-section');
+      if (section) section.style.display = 'none';
+      list.innerHTML = '';
+    });
+    return;
+  }
+
+  const reviewsHTML = reviews.map(review => `
+    <div class="review-card">
+      <p class="review-text">"${review.text}"</p>
+      <div class="review-meta">
+        <p class="review-author">${review.author}</p>
+        <p class="review-role">${review.role}</p>
+      </div>
+    </div>
+  `).join('');
+
+  lists.forEach(list => {
+    list.innerHTML = reviewsHTML;
+  });
 }
 
 function renderProjectsGrid(projects) {

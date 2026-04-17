@@ -27,7 +27,45 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+  // Handle initial URL parameter for project deep-link
+  const initialProject = getProjectIdFromUrl();
+  if (initialProject) {
+    setTimeout(() => {
+      openModal(initialProject, true);
+    }, 100);
+  }
+
+  // Handle browser back/forward navigation
+  window.addEventListener('popstate', () => {
+    const projectId = getProjectIdFromUrl();
+    if (projectId) {
+      openModal(projectId, true);
+    } else {
+      closeModal(true);
+    }
+  });
 });
+
+function getProjectIdFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('project');
+}
+
+function setProjectToUrl(projectId) {
+  const url = new URL(window.location);
+  if (url.searchParams.get('project') !== projectId) {
+    url.searchParams.set('project', projectId);
+    history.pushState({ projectId }, '', url);
+  }
+}
+
+function removeProjectFromUrl() {
+  const url = new URL(window.location);
+  if (url.searchParams.has('project')) {
+    url.searchParams.delete('project');
+    history.pushState({}, '', url);
+  }
+}
 
 function initPortfolio() {
   // Get data from window.portfolioData (loaded from data/projects.js)
@@ -351,7 +389,7 @@ const artOverlayBackdrop = document.getElementById('artOverlayBackdrop');
 const artOverlayImage = document.getElementById('artOverlayImage');
 const artOverlayClose = document.getElementById('artOverlayClose');
 
-function openModal(projectKey) {
+function openModal(projectKey, skipHistory = false) {
   // Try both projects and artworks
   const allData = { ...window.portfolioData?.projects, ...window.portfolioData?.artworks };
   const p = allData[projectKey];
@@ -546,6 +584,10 @@ function openModal(projectKey) {
 
 
 
+  if (isProject && skipHistory !== true) {
+    setProjectToUrl(projectKey);
+  }
+
   // Show the modal
   if (modal) modal.scrollTop = 0;
   backdrop.classList.add('open');
@@ -581,11 +623,15 @@ function addVishwasPlaceholders(root) {
 
 
 
-function closeModal() {
+function closeModal(skipHistory = false) {
   backdrop.classList.remove('open');
   modal.classList.remove('modal--fullscreen');
   backdrop.classList.remove('fullscreen-mode');
   document.body.style.overflow = '';
+  
+  if (skipHistory !== true) {
+    removeProjectFromUrl();
+  }
 }
 
 function openArtOverlay(src, alt) {
@@ -613,8 +659,8 @@ function initModal() {
     if (card) openModal(card.dataset.id);
   });
 
-  closeBtn?.addEventListener('click', closeModal);
-  btnBack?.addEventListener('click', closeModal);
+  closeBtn?.addEventListener('click', () => closeModal());
+  btnBack?.addEventListener('click', () => closeModal());
 
   btnFullScreen?.addEventListener('click', () => {
     modal.classList.toggle('modal--fullscreen');

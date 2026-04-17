@@ -20,6 +20,7 @@ const projects = {
       { type: 'quote', level: 2, text: 'This project is an exploration of calm productivity, enabling students to plan, focus, and reflect on their effort through a minimal and supportive interface.' },
       { type: 'spacing', space: 16 },
       { type: 'image', src: 'projects/doromind/images/doro 11.jpg' },
+      { type: 'image', src: 'projects/doromind/images/brand.png' },
       { type: 'centerheading', text: 'The intent was to rework both function and aesthetic to improve clarity, usability, and long-term engagement.' },
       //{ type: 'heading', level: 3, text: 'The Challenge' },
       { type: 'spacing', space: 16 },
@@ -27,12 +28,12 @@ const projects = {
       // { type: 'heading', text: 'Product Strategy' },
       { type: 'card', class: 'color-doro', title: 'Product Strategy', text: 'Prioritize quick entry into focus sessions, meaningful task organization, and motivation through subtle rewards—balancing productivity with mental ease.' },
       { type: 'spacing', space: 16 },
-      { type: 'image', src: 'projects/doromind/images/doro 8.jpg' },
+      //{ type: 'image', src: 'projects/doromind/images/doro 8.jpg' },
       //{ type: 'paragraph', text: 'We chose soft, calming colors to evoke tranquility.' },
-      { type: 'gallery2', images: ['projects/doromind/images/doro 12.jpg', 'projects/doromind/images/doro 9.jpg'], columns: 2 },
+      //{ type: 'gallery2', images: ['projects/doromind/images/doro 12.jpg', 'projects/doromind/images/doro 9.jpg'], columns: 2 },
       { type: 'heading', text: 'Key Features' },
       {
-        type: 'list', ordered: false, items: [
+        type: 'list', class: 'two-column-list', ordered: false, items: [
           'Focused Sessions- Minimal & focused UI',
           'Actionable Task Cards- Complete, move, delete, filter',
           'Progress Insights- Clear daily & weekly tracking',
@@ -41,9 +42,8 @@ const projects = {
           'White Noise — Distraction-free focus'
         ]
       },
-      { type: 'spacing', space: 32 },
+      { type: 'spacing', space: 48 },
       { type: 'centertext', text: 'Research and interviews revealed that students struggle to plan weekly tasks and track long study hours. Existing apps either lack depth or overload users with features, reducing long-term engagement.' },
-      { type: 'spacing', space: 16 },
       { type: 'image', src: 'projects/doromind/images/user flow.png' },
       { type: 'image', src: 'projects/doromind/images/user persona.jpg' },
       { type: 'image', src: 'projects/doromind/images/design guide.png' },

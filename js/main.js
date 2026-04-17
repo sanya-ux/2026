@@ -343,6 +343,8 @@ const backdrop = document.getElementById('modalBackdrop');
 const modalBody = document.getElementById('modalBody');
 const closeBtn = document.getElementById('modalClose');
 const modal = document.getElementById('modal');
+const btnFullScreen = document.getElementById('modalFullScreen');
+const btnBack = document.getElementById('modalBack');
 
 // ── ART OVERLAY ELEMENTS ──
 const artOverlayBackdrop = document.getElementById('artOverlayBackdrop');
@@ -502,9 +504,50 @@ function openModal(projectKey) {
     </div>
   `;
 
+  // More projects logic
+  const projectKeys = Object.keys(window.portfolioData?.projects || {});
+  // Treat as project if exists in projects
+  const isProject = projectKeys.includes(projectKey);
+
+  if (isProject) {
+    const otherKeys = projectKeys.filter(k => k !== projectKey);
+    // Grab all other projects
+    
+    if (otherKeys.length > 0) {
+      const cardsHTML = otherKeys.map(k => {
+        const proj = window.portfolioData.projects[k];
+        return `
+          <div class="more-project-card" data-id="${proj.id}" onclick="openModal('${proj.id}')">
+            <div class="more-project-thumb">
+              <img src="${proj.cover || proj.image}" alt="${proj.title || ''}" loading="lazy" />
+            </div>
+            <span class="card-label">${proj.hoverTitle || proj.title || ''}</span>
+          </div>
+        `;
+      }).join('');
+
+      modalBody.innerHTML += `
+        <div class="more-projects-section">
+          <div class="more-projects-header">
+            <h3 class="more-projects-heading">More Projects</h3>
+            <button class="more-projects-next" onclick="document.getElementById('mpCarousel').scrollBy({left: 300, behavior: 'smooth'})">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+          <div class="more-projects-carousel" id="mpCarousel">
+            ${cardsHTML}
+          </div>
+        </div>
+      `;
+    }
+  }
+
 
 
   // Show the modal
+  if (modal) modal.scrollTop = 0;
   backdrop.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -540,6 +583,8 @@ function addVishwasPlaceholders(root) {
 
 function closeModal() {
   backdrop.classList.remove('open');
+  modal.classList.remove('modal--fullscreen');
+  backdrop.classList.remove('fullscreen-mode');
   document.body.style.overflow = '';
 }
 
@@ -569,6 +614,12 @@ function initModal() {
   });
 
   closeBtn?.addEventListener('click', closeModal);
+  btnBack?.addEventListener('click', closeModal);
+
+  btnFullScreen?.addEventListener('click', () => {
+    modal.classList.toggle('modal--fullscreen');
+    backdrop.classList.toggle('fullscreen-mode');
+  });
 
   backdrop?.addEventListener('click', (e) => {
     if (e.target === backdrop) closeModal();
@@ -607,6 +658,9 @@ function initTabs() {
         content.style.display = 'none';
       });
       document.getElementById('tab-' + targetTab).style.display = 'block';
+      
+      // Reset window scroll position
+      window.scrollTo(0, 0);
     });
   });
 }
